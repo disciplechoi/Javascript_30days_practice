@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    box-sizing : border-box;  
+    
+    cursor : none;
+   }
+   
+
+.container
+{
+    min-height: 100vh; 
+    /*min-height랑 height 했을 때 뭐가 다른거지*/
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.cursor{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border : 1.5px solid white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+
+}
+
+/* after로 적용해야지 cursor 뒤에 효과가 나타나게 된다. 
+cursor로 그냥 적용 시 cursor에 적용한 css가 사라짐 -__- */
+
+.click::after{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    animation: click 1s ease forwards;
+}
+
+@keyframes click {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(7);
+      }
+}
