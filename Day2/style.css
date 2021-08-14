@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body[data-theme="light"]{
+    --color-1 : rgb(196, 220, 241);
+    --color-2 : white;
+    --color-3 : white;
+    --color-4 : rgb(80, 82, 110);
+    --color-5 : white;
+    --color-dark : #1e1f26;
+}
+
+body[data-theme="dark"]{
+    --color-1 : #1e1f26;
+    --color-2 :#292c33;
+    --color-3: rgb(39, 40, 42);
+    --color-4: rgb(186, 186, 202);
+    --color-5: #1e1f26;
+}
+
+
+
+body {
+    background-color: var(--color-1);
+    font-family: "Roboto Mono", monospace;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    min-height: 100vh; 
+
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    min-height: 100vh; /*이거를 안했을 떄 가운데 정렬이 안되는 이유는?*/
+}
+
+.container{
+    border-radius: 8px;
+    background-color: var(--color-2);
+    max-width : 500px; 
+    padding : 20px;
+    color : var(--color-4);
+    
+}
+
+h1{
+    font-size : 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--color-4);
+    padding: 10px 30px;
+    border: none;
+    color: var(--color-3);
+    font-size: 24px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.theme-switcher input{
+    width : 0;
+    height : 0;
+    display: none;
+    visibility: hidden;
+}
+
+.slider {
+    background-color: var(--color-4);
+    display: inline-block;
+    width: 20px;
+    height : 20px;
+    border-radius: 50px;
+    transition: .5s ease;
+    margin-left: 2px;
+    margin-top: 3px;
+
+}
+
+input:checked + .slider {
+    background-color: var(--color-4);
+    transform: translateX(31px);
+    transition: 0.5s ease;
+  }
+
+
+input:checked + .theme-switcher {
+    border: 2px solid white;
+  } 
+
+
+
+.theme-switcher{
+    margin-top : 10px;
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 30px;
+    display: block;
+    background-color: var(--color-5);
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 50px;
+    float: right;
+}
+
+
+.dark-mode{
+    background-color: black;
+}
