@@ -1,6 +1,5 @@
 'use strict';
 
-
 loadJoke();
 
 const button = document.querySelector('button');
