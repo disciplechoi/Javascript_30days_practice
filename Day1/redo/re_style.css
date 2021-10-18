@@ -1,0 +1,43 @@
+*{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+.container{
+    min-height: 100vh;
+}
+
+.cursor {
+    position: absolute;
+    width : 18px;
+    height : 18px;
+    background-color: red;
+}
+
+.click::before{
+    content : "BEFORE"; 
+    position: absolute;
+    background-color: red;
+    width : 30px;
+    height: 30px;
+    animation: click .5s ease forwards;
+}
+.test::before{
+    content:"BEOFRE";
+}
+
+.test::after{
+    content:"AFTER";
+}
+@keyframes click {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(7);
+      }
+}

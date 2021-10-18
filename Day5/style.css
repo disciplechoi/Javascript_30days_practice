@@ -1,0 +1,16 @@
+* {
+    margin : 0;
+    padding : 0;
+   
+}
+
+.container {
+    height : 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 90px;
+}
